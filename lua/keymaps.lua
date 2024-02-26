@@ -94,3 +94,14 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- toggleTerminal  
+keymap("n" ,"<C-_>",":ToggleTerm<CR>",opts) 
+-- keymap("t" ,"<C-_>",":ToggleTerm<CR>",opts) 
+  vim.keymap.set('t', '<C-_>', [[<Cmd>wincmd l<CR>]], opts)
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+  vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+  vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+  vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+  vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+  vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)

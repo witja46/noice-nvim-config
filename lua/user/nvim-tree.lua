@@ -86,6 +86,9 @@ function M.config()
       enable = true,
       update_cwd = true,
     },
+    filters = {
+      dotfiles = false
+    },
     renderer = {
       icons = {
         glyphs = {

@@ -2,6 +2,22 @@ local M = {
   "kyazdani42/nvim-tree.lua",
   commit = "f5d970d4506f385b29534252d8c15a782fa53034",
   event = "VimEnter",
+  opts = {
+    filesystem = {
+      filtered_items = {
+	 visible = true,
+	 show_hidden_count = true,
+	 hide_dotfiles = false,
+	 hide_gitignored = false,
+	 hide_by_name = {
+	   -- '.git',
+	   -- '.DS_Store',
+	   -- 'thumbs.db',
+	 },
+	never_show = {},
+      },
+    }
+  }
 }
 
 local function on_attach(bufnr)

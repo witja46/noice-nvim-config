@@ -1,3 +1,5 @@
+
+
 # A Basic Stable IDE config for Neovim
 
 > Why does this repo exist?
@@ -14,7 +16,12 @@ As I mentioned, this config is meant as a starting point for people new to Neovi
 
 Now this config uses `lazy.nvim` as a plugin manager, so if you are migrating from packer you should probably remove
 `$HOME/.local/share/nvim` and re-open nvim to re-install the plugins to not face any issues.
+## make sure you have all needed tools for installation 
 
+```sh
+sudo apt-get install libtool autoconf automake cmake libncurses5-dev g++
+
+```
 ## Install Neovim 0.9
 
 You can install Neovim with your package manager e.g. brew, apt, pacman etc.. but remember that when you update your packages Neovim may be upgraded to a newer version.

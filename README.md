@@ -19,7 +19,7 @@ Now this config uses `lazy.nvim` as a plugin manager, so if you are migrating fr
 ## make sure you have all needed tools for installation 
 
 ```sh
-sudo apt-get install libtool autoconf automake cmake libncurses5-dev g++
+sudo apt-get install libtool autoconf automake cmake libncurses5-dev g++ unzip
 
 ```
 ## Install Neovim 0.9

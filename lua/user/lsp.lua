@@ -1,12 +1,10 @@
 local M = {
   "neovim/nvim-lspconfig",
-  commit = "649137cbc53a044bffde36294ce3160cb18f32c7",
   lazy = false,
   event = { "BufReadPre" },
   dependencies = {
     {
       "hrsh7th/cmp-nvim-lsp",
-      commit = "0e6b2ed705ddcff9738ec4ea838141654f12eeef",
     },
   },
 }
@@ -44,13 +42,16 @@ function M.config()
   end
 
 
+lspconfig.solidity_ls_nomicfoundation.setup{}
+
+
   for _, server in pairs(require("utils").servers) do
     Opts = {
       on_attach = on_attach,
       capabilities = capabilities,
     }
-
-    server = vim.split(server, "@")[1]
+    -- lspconfig.solidity_ls.setup()
+    -- server = vim.split(server, "@")[1]
 
     local require_ok, conf_opts = pcall(require, "settings." .. server)
     if require_ok then

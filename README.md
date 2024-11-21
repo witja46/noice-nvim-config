@@ -1,7 +1,14 @@
 
 
 # A Basic Stable IDE config for Neovim
-
+## Clean up
+if you had nvim installed to avoid any conflicts you should uninstall of of nvim files:
+```sh
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
+```
 > Why does this repo exist?
 
 This config attempts to provide a rock solid fully featured starting point for someone new to Neovim, or just tired of maintaining the basic IDE components of their config.
@@ -36,6 +43,11 @@ cd neovim
 git checkout release-0.9
 make CMAKE_BUILD_TYPE=Release
 sudo make install
+```
+### Alternative install
+you can use also snap
+```sh
+sudo snap install nvim --classic
 ```
 
 ## Install the config

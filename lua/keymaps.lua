@@ -6,7 +6,6 @@ local opts = { silent = true }
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -44,6 +43,10 @@ keymap("v", "p", "P", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+
+-- quick navigation to the middle of the next screen -- 
+keymap("n","<C-d>", "<C-d>zz",opts)
+keymap("n","<C-u>", "<C-u>zz",opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -94,11 +97,10 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-
 -- toggleTerminal  
-keymap("n" ,"<C-_>",":ToggleTerm<CR>",opts) 
--- keymap("t" ,"<C-_>",":ToggleTerm<CR>",opts) 
-  vim.keymap.set('t', '<C-_>', [[<Cmd>wincmd l<CR>]], opts)
+keymap("n" ,"<C-t>",":ToggleTerm<CR>",opts) 
+-- keymap("t" ,"<C-d>",":ToggleTerm<CR>",opts) 
+  vim.keymap.set('t', '<C-t>', [[<Cmd>wincmd l<CR>]], opts)
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)

@@ -41,8 +41,10 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 keymap("v", "p", "P", opts)
 
 -- Insert --
--- Press jk fast to enter
+-- Press j fast to esc 
+keymap("i", "jj", "<ESC>", opts)
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "<C-;>", "<ESC>", opts)
 
 -- quick navigation to the middle of the next screen -- 
 keymap("n","<C-d>", "<C-d>zz",opts)
@@ -98,12 +100,24 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 -- toggleTerminal  
-keymap("n" ,"<C-t>",":ToggleTerm<CR>",opts) 
+keymap("n" ,"<C-o>",":ToggleTerm<CR>",opts) 
+keymap("n" ,"<leader>o",":ToggleTerm<CR>",opts) 
+-- terminal build and run command 
+keymap("n" ,"<leader>cc",":ToggleTerm<CR> cargo run <CR>",opts) 
+keymap("n" ,"<leader>yy",":ToggleTerm<CR> yarn dev<CR>",opts) 
+keymap("n" ,"<leader>yc",":ToggleTerm<CR> yc <CR>",opts) 
+keymap("n" ,"<leader>yi",":ToggleTerm<CR> yi <CR>",opts) 
 -- keymap("t" ,"<C-d>",":ToggleTerm<CR>",opts) 
   vim.keymap.set('t', '<C-t>', [[<Cmd>wincmd l<CR>]], opts)
+  vim.keymap.set('t', '<C-o>', [[<Cmd>wincmd l<CR>]], opts)
+
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-  vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-  vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+  -- vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+  -- vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+  -- vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
   vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+
+
+
+  vim.keymap.set('n', '<leader>s',"<cmd>w<cr>", opts)

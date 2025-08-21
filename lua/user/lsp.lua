@@ -42,7 +42,8 @@ function M.config()
   end
 
 
-lspconfig.solidity_ls_nomicfoundation.setup{}
+  lspconfig.jdtls.setup{}
+  lspconfig.solidity_ls_nomicfoundation.setup {}
 
 
   for _, server in pairs(require("utils").servers) do
